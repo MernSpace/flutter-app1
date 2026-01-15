@@ -36,40 +36,44 @@ class _RegisterPageState extends State<RegisterFragment> {
             padding: EdgeInsets.all(24),
             child: Form(
               key: _formKey,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child:  Column(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Register an account."),
-                      SizedBox(height: 10,),
-                      Text("Join to learn and grow!"),
-                      SizedBox(height: 10,),
-                      TextFormField(
-                        controller: _nameController,
-                        keyboardType: TextInputType.name,
-                        decoration: InputDecoration(
-                          labelText: "Name",
-                          prefixIcon: Icon(Icons.person),
-                          border: OutlineInputBorder(),
-                        ),
-                        validator: (value){
-                          if(value== null || value.isEmpty){
-                            return "Name is required";
-                          }
-                          return null;
-                        },
-                      ),
-
-
-                    ],
+                  Text("Register an account."),
+                  SizedBox(height: 10,),
+                  Text("Join to learn and grow!"),
+                  SizedBox(height: 10,),
+                  TextFormField(
+                    controller: _nameController,
+                    keyboardType: TextInputType.name,
+                    decoration: InputDecoration(
+                      labelText: "Name",
+                      prefixIcon: Icon(Icons.person),
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (value){
+                      if(value== null || value.isEmpty){
+                        return "Name is required";
+                      }
+                      return null;
+                    },
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Hello")
-                    ],
-                  )
+                  SizedBox(height: 20,),
+                  TextFormField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      labelText: "Email",
+                      prefixIcon: Icon(Icons.email),
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (value){
+                      if(value== null || value.isEmpty){
+                        return "Email is required";
+                      }
+                      return null;
+                    },
+                  ),
+
                 ],
               ),
             ),
