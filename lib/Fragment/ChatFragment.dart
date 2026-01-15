@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // TODO: add flutter_svg to pubspec.yaml
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:untitled/Fragment/FormFragment.dart';
+import 'package:untitled/Fragment/RegisterFragment.dart';
 
 class ChatScreen extends StatelessWidget {
   static String routeName = "/home";
@@ -53,7 +54,9 @@ class HomeHeader extends StatelessWidget {
           IconBtnWithCounter(
             svgSrc: bellIcon,
             numOfitem: 3,
-            press: () {},
+            press: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>RegisterFragment()));
+            },
           ),
         ],
       ),
